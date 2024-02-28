@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/userListFragment">
+
+    <fragment
+        android:id="@+id/userListFragment"
+        android:name="curtin.edu.assignment2a.UserListFragment"
+        android:label="fragment_user_list"
+        tools:layout="@layout/fragment_user_list"
+        >
+        <action
+            android:id="@+id/action_userListFragment_to_userPostsFragment"
+            app:destination="@id/userPostsFragment" />
+        <argument
+            android:name="userID"
+            app:argType="integer" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/userPostsFragment"
+        android:name="curtin.edu.assignment2a.UserPostsFragment"
+        android:label="fragment_user_posts"
+        tools:layout="@layout/fragment_user_posts"
+        >
+        <argument
+            android:name="userId"
+            app:argType="integer" />
+    </fragment>
+
+
+</navigation>
